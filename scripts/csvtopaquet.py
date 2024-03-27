@@ -25,8 +25,8 @@ def csv_to_parquet_single_file(csv_file_path, output_file_path, chunksize=100000
     # Print the row count after sampling
     print(f"Row count after sampling: {df.shape[0]}")
 
-    # Convert the DataFrame to a PyArrow Table
-    table = pa.Table.from_pandas(df)
+    # Convert the DataFrame to a PyArrow Table without including the index
+    table = pa.Table.from_pandas(df, preserve_index=False)
 
     # Write the table to a single Parquet file
     pq.write_table(table, output_file_path)
