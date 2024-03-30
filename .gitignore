@@ -2,4 +2,8 @@
 **csv
 **DS_Store
 **parquet
-
+**.env
+**stopwords
+**stopwords.**
+**__pycache__
+**DS_Store**
