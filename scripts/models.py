@@ -1,18 +1,16 @@
 import pandas as pd
+import numpy as np
 import statsmodels.api as sm
 import matplotlib.pyplot as plt
 import seaborn as sns
 from sklearn.model_selection import train_test_split
-from sklearn.metrics import accuracy_score, confusion_matrix, classification_report
-
+from sklearn.metrics import accuracy_score, confusion_matrix, classification_report,ConfusionMatrixDisplay
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.tree import DecisionTreeClassifier, plot_tree
 from sklearn.tree import plot_tree
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.naive_bayes import GaussianNB
 import shap
-
-
 import numpy as np
 import statsmodels.api as sm
 from sklearn.model_selection import train_test_split
@@ -58,13 +56,11 @@ def logistic_regression_model(df, target_column, drop_columns=None, add_constant
         # Return the model object itself
         return model
 
-
 def train_and_evaluate_decision_tree(df, target_column, drop_columns, test_size=0.3, random_state=42, return_accuracy_only=False, top_n_features=20):
     """
-    Trains and evaluates a Decision Tree Classifier and visualizes the top N feature importances with values.
-    
+    Trains and evaluates a Decision Tree Classifier and visualizes the top N feature importances with values and the decision tree itself.
     """
-     # Prepare the data
+    # Prepare the data
     columns_to_drop = drop_columns + [target_column]
     X = df.drop(columns=columns_to_drop)
     Y = df[target_column]
@@ -85,29 +81,37 @@ def train_and_evaluate_decision_tree(df, target_column, drop_columns, test_size=
         return accuracy
     else:
         # Print classification report
-        report = classification_report(y_test, y_pred)
-        print(report)
-        
-        # Calculate feature importances
+        print("Classification Report:\n", classification_report(y_test, y_pred))
+
+        # Plotting the confusion matrix
+        cm = confusion_matrix(y_test, y_pred)
+        disp = ConfusionMatrixDisplay(confusion_matrix=cm)
+        disp.plot(cmap=plt.cm.Blues)
+        plt.title('Confusion Matrix')
+        plt.show()
+
+        # Calculate and plot feature importances
         feature_importances = dt_model.feature_importances_
         indices = np.argsort(feature_importances)[-top_n_features:]
         
-        # Plot feature importances
         plt.figure(figsize=(10, 8))
         bars = plt.barh(range(top_n_features), feature_importances[indices], align='center', color='skyblue')
         plt.yticks(range(top_n_features), [X.columns[i] for i in indices])
         plt.xlabel('Relative Importance')
         plt.title('Top 20 Feature Importances')
-        
-        # Add the feature importances values on the bars
+
         for bar in bars:
             plt.text(bar.get_width(), bar.get_y() + bar.get_height()/2,
                      f'{bar.get_width():.3f}', 
                      va='center', ha='left', fontsize=8)
-        
         plt.tight_layout()
         plt.show()
 
+        # Plot the decision tree
+        plt.figure(figsize=(20, 10))
+        plot_tree(dt_model, feature_names=X.columns, class_names=[str(cls) for cls in dt_model.classes_], filled=True, impurity=True, max_depth=3, fontsize=10)
+        plt.title('Decision Tree')
+        plt.show()
 
 def train_and_evaluate_random_forest(df, target_column, drop_columns, test_size=0.3, random_state=42, return_accuracy_only=False, top_n_features=20):
     """
@@ -135,22 +139,14 @@ def train_and_evaluate_random_forest(df, target_column, drop_columns, test_size=
     # Print classification report
     print("Classification Report:\n", classification_report(y_test, y_pred))
     
-    # Plotting the confusion matrix
-    try:
-        from sklearn.metrics import plot_confusion_matrix
-        plt.figure(figsize=(6, 6))
-        plot_confusion_matrix(rf_model, X_test, y_test, cmap=plt.cm.Blues)
-        plt.title('Confusion Matrix')
-        plt.show()
-    except ImportError:
-        from sklearn.metrics import ConfusionMatrixDisplay
-        cm = confusion_matrix(y_test, y_pred)
-        disp = ConfusionMatrixDisplay(confusion_matrix=cm)
-        disp.plot(cmap=plt.cm.Blues)
-        plt.title('Confusion Matrix')
-        plt.show()
+    # Plotting the confusion matrix using ConfusionMatrixDisplay
+    cm = confusion_matrix(y_test, y_pred)
+    disp = ConfusionMatrixDisplay(confusion_matrix=cm)
+    disp.plot(cmap=plt.cm.Blues)
+    plt.title('Confusion Matrix')
+    plt.show()
 
-# Feature Importances - UPDATED SECTION STARTS HERE
+    # Feature Importances
     feature_importances = rf_model.feature_importances_
     indices = np.argsort(feature_importances)[-top_n_features:]
     
@@ -166,6 +162,8 @@ def train_and_evaluate_random_forest(df, target_column, drop_columns, test_size=
         plt.text(bar.get_width(), bar.get_y() + bar.get_height()/2,
                  f'{bar.get_width():.3f}', 
                  va='center', ha='left', fontsize=8)
+    plt.tight_layout()
+    plt.show()
 
     # Plot one of the trees from the random forest
     plt.figure(figsize=(20, 10))
@@ -173,7 +171,6 @@ def train_and_evaluate_random_forest(df, target_column, drop_columns, test_size=
     plot_tree(rf_model.estimators_[tree_index], feature_names=X.columns, class_names=[str(cls) for cls in rf_model.classes_], filled=True, impurity=True, max_depth=3, fontsize=10)
     plt.title('Example Decision Tree from the Random Forest')
     plt.show()
-
 
 def train_and_evaluate_knn(df, target_column, drop_columns, test_size=0.3, random_state=42, n_neighbors=5, return_accuracy_only=False):
     """
@@ -224,7 +221,6 @@ def train_and_evaluate_knn(df, target_column, drop_columns, test_size=0.3, rando
         plt.ylabel('True Label')
         plt.xlabel('Predicted Label')
         plt.show()
-
     
 def train_and_evaluate_gaussian_nb(df, target_column, drop_columns, test_size=0.3, random_state=42, return_accuracy_only=False):
     """
