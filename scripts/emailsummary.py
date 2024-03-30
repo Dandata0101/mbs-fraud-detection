@@ -1,14 +1,7 @@
-from dotenv import load_dotenv
 from IPython.display import HTML, display
-
 import os
 import openai
 import pandas as pd
-
-# Load the environment variables from the .env file
-load_dotenv()
-
-openaikey = os.environ.get("openaikey")
 
 def summarize_text_column_with_openai_chat(text_column, openai_api_key):
     # Set the OpenAI API key
@@ -32,6 +25,7 @@ def summarize_text_column_with_openai_chat(text_column, openai_api_key):
     # Extract the summary text from the response
     summary = response['choices'][0]['message']['content'].strip()
     
+    # Use display to show the summary in HTML format
     display(HTML(f"""
     <table style="width: 100%; border: 1px solid black; font-size: 20px;">
         <tr>
@@ -41,4 +35,7 @@ def summarize_text_column_with_openai_chat(text_column, openai_api_key):
             <td style="text-align: left; padding-right: 20px;">{summary}</td>
         </tr>
     </table>
-    """))
+    """));
+    
+    # Return nothing to avoid the last output being 'None'
+    return

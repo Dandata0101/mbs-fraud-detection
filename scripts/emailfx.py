@@ -1,8 +1,8 @@
 import pandas as pd
 import os
-from rich.console import Console
 from rich.table import Table
-from rich import box
+from rich.console import Console
+from rich.box import ROUNDED
 from wordcloud import WordCloud
 import matplotlib.pyplot as plt
 import openpyxl
@@ -32,24 +32,29 @@ def display_flagged_email_count(df):
         flag_table.add_row(str(flag), str(count))
     console.print(flag_table)
 
-# Function to display filtered emails in a rich table
 def display_email_table(emails_df):
+    console = Console()  # Ensure a Console instance is created to use it for printing
     console.print("Filtered Email(s):", style="bold underline")
-    email_table = Table(show_header=True, header_style="bold magenta", box=box.ROUNDED)
-    email_table.add_column("Message-ID", style="dim", width=100, overflow="fold")
-    email_table.add_column("From", width=100)
-    email_table.add_column("To", width=100, overflow="fold")
-    email_table.add_column("Date", style="dim", width=100)
-    email_table.add_column("Content", overflow="fold", width=100)
+    email_table = Table(show_header=True, header_style="bold magenta", box=ROUNDED)
+    
+    # Increase the width of each column here. Adjust these values as needed based on your display.
+    email_table.add_column("Message-ID", style="dim", width=120, overflow="fold")
+    email_table.add_column("From", width=120)
+    email_table.add_column("To", width=120, overflow="fold")
+    email_table.add_column("Date", style="dim", width=120)
+    email_table.add_column("Content", overflow="fold", width=250)  
+    
     for _, row in emails_df.head().iterrows():
         email_table.add_row(
             str(row['Message-ID']),
             row['From'],
             row['To'],
             str(row['Date']),
-            row['clean_content'][:200] + "..."
+            row['clean_content'][:400] + "..."  # Increase the initial content snippet length if desired
         )
+    
     console.print(email_table)
+
 
 import nltk
 from nltk.tokenize import word_tokenize
