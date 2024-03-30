@@ -42,7 +42,7 @@ def display_email_table(emails_df):
     email_table.add_column("From", width=100, overflow="fold")
     email_table.add_column("To", width=100, overflow="fold")
     email_table.add_column("Date", style="dim", width=100)
-    email_table.add_column("Content", overflow="fold", width=150)  
+    email_table.add_column("Content", overflow="fold", width=120)  
     
     for _, row in emails_df.head().iterrows():
         email_table.add_row(
