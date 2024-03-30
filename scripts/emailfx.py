@@ -39,9 +39,9 @@ def display_email_table(emails_df):
     
     # Increase the width of each column here. Adjust these values as needed based on your display.
     email_table.add_column("Message-ID", style="dim", width=120, overflow="fold")
-    email_table.add_column("From", width=120, overflow="fold")
-    email_table.add_column("To", width=120, overflow="fold")
-    email_table.add_column("Date", style="dim", width=120)
+    email_table.add_column("From", width=100, overflow="fold")
+    email_table.add_column("To", width=100, overflow="fold")
+    email_table.add_column("Date", style="dim", width=100)
     email_table.add_column("Content", overflow="fold", width=150)  
     
     for _, row in emails_df.head().iterrows():
