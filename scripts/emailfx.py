@@ -42,7 +42,7 @@ def display_email_table(emails_df):
     email_table.add_column("From", width=120)
     email_table.add_column("To", width=120, overflow="fold")
     email_table.add_column("Date", style="dim", width=120)
-    email_table.add_column("Content", overflow="fold", width=250)  
+    email_table.add_column("Content", overflow="fold", width=200)  
     
     for _, row in emails_df.head().iterrows():
         email_table.add_row(
@@ -50,7 +50,7 @@ def display_email_table(emails_df):
             row['From'],
             row['To'],
             str(row['Date']),
-            row['clean_content'][:400] + "..."  # Increase the initial content snippet length if desired
+            row['clean_content'][:300] + "..."  # Increase the initial content snippet length if desired
         )
     
     console.print(email_table)
