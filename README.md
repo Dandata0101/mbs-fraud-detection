@@ -4,3 +4,8 @@
 
 
 # Day 1 Exercise
+# Day 2 Exercise
+# Day 3 Exercise
+
+
+[Script Directory :file_folder:](https://github.com/Dandata0101/mbs-fraud-detection/tree/main/scripts)
