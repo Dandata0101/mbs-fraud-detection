@@ -10,7 +10,9 @@ All pythons have been place into functions to make it easier show ouputs in Jupy
 4. [AI Email summary :robot::email:](https://github.com/Dandata0101/mbs-fraud-detection/blob/main/scripts/emailsummary.py)
 5. [ML Models :robot::chart_with_upwards_trend:](https://github.com/Dandata0101/mbs-fraud-detection/blob/main/scripts/models.py) 
 
+
+
 **Jupyter Reports** :blue_book::snake:
--  [Enron Email analysis 01 :email::chart_with_upwards_trend:](https://github.com/Dandata0101/mbs-fraud-detection/blob/main/Classwork_day01.ipynb)
--  [Top Features & analysis 02 :green_book:](https://github.com/Dandata0101/mbs-fraud-detection/blob/main/Classwork_day02.ipynb)
--  [ML Models 03 :robot:](https://github.com/Dandata0101/mbs-fraud-detection/blob/main/Classwork_day03.ipynb)
+1. [Enron Email analysis :email::chart_with_upwards_trend:](https://github.com/Dandata0101/mbs-fraud-detection/blob/main/Classwork_day01.ipynb)
+2. [Top Features & analysis :green_book:](https://github.com/Dandata0101/mbs-fraud-detection/blob/main/Classwork_day02.ipynb)
+3.  [ML Models analyses :robot:](https://github.com/Dandata0101/mbs-fraud-detection/blob/main/Classwork_day03.ipynb)
