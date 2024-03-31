@@ -13,4 +13,4 @@ All pythons have been place into functions to make it easier show ouputs in Jupy
 **Jupyter Reports** :blue_book::snake:
 -  [Enron Email analysis 01 :email::chart_with_upwards_trend:](https://github.com/Dandata0101/mbs-fraud-detection/blob/main/Classwork_day01.ipynb)
 -  [Top Features & analysis 02 :green_book:](https://github.com/Dandata0101/mbs-fraud-detection/blob/main/Classwork_day02.ipynb)
--  [ML Models 03:robot:](https://github.com/Dandata0101/mbs-fraud-detection/blob/main/Classwork_day03.ipynb)
+-  [ML Models 03 :robot:](https://github.com/Dandata0101/mbs-fraud-detection/blob/main/Classwork_day03.ipynb)
