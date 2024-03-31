@@ -11,7 +11,7 @@ def summarize_text_column_with_openai_chat(text_column, openai_api_key):
     full_text = ' '.join([str(text) for text in text_column if pd.notnull(text)])
     
     # Limit the size of the full_text to avoid exceeding token limits
-    full_text = full_text[:2000]  # Example: limit to the first 2000 characters
+    full_text = full_text[:8000] 
 
     # Use the chat completions endpoint for generating a summary with the chat model
     response = openai.ChatCompletion.create(
@@ -37,5 +37,4 @@ def summarize_text_column_with_openai_chat(text_column, openai_api_key):
     </table>
     """));
     
-    # Return nothing to avoid the last output being 'None'
     return
