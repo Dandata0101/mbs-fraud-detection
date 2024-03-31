@@ -134,6 +134,7 @@ def train_and_evaluate_random_forest(df, target_column, drop_columns, test_size=
     accuracy = accuracy_score(y_test, y_pred)
 
     if return_accuracy_only:
+        print(f"Random Forest Accuracy: {accuracy * 100:.2f}%")
         return accuracy
 
     # Print classification report
@@ -169,8 +170,11 @@ def train_and_evaluate_random_forest(df, target_column, drop_columns, test_size=
     plt.figure(figsize=(20, 10))
     tree_index = 0  # Choosing the first tree as an example
     plot_tree(rf_model.estimators_[tree_index], feature_names=X.columns, class_names=[str(cls) for cls in rf_model.classes_], filled=True, impurity=True, max_depth=3, fontsize=10)
-    plt.title('Example Decision Tree from the Random Forest')
+    plt.title('Decision Tree from the Random Forest')
     plt.show()
+
+
+
 
 def train_and_evaluate_knn(df, target_column, drop_columns, test_size=0.3, random_state=42, n_neighbors=5, return_accuracy_only=False):
     """
