@@ -3,6 +3,7 @@
 ![Python - Version](https://img.shields.io/badge/PYTHON-3.11-red?style=for-the-badge&logo=python&logoColor=white)
 
 All pythons have been place into functions to make it easier show ouputs in Jupyter notebooks:
+
 [Script Directory :file_folder:](https://github.com/Dandata0101/mbs-fraud-detection/tree/main/scripts)
 1. [Csv to Parquet conversion :floppy_disk:](https://github.com/Dandata0101/mbs-fraud-detection/blob/main/scripts/csvtopaquet.py)
 2. [Clean Data :broom:](https://github.com/Dandata0101/mbs-fraud-detection/blob/main/scripts/dataclean.py)
@@ -13,6 +14,7 @@ All pythons have been place into functions to make it easier show ouputs in Jupy
 
 
 **Jupyter Reports** :blue_book::snake:
+
 1. [Enron Email analysis :email::chart_with_upwards_trend:](https://github.com/Dandata0101/mbs-fraud-detection/blob/main/Classwork_day01.ipynb)
 2. [Top Features & analysis :green_book:](https://github.com/Dandata0101/mbs-fraud-detection/blob/main/Classwork_day02.ipynb)
 3.  [ML Models analyses :robot:](https://github.com/Dandata0101/mbs-fraud-detection/blob/main/Classwork_day03.ipynb)
