@@ -14,7 +14,7 @@
 -  [Enron Email analysis :email::chart_with_upwards_trend:](https://github.com/Dandata0101/mbs-fraud-detection/blob/main/Classwork_day01.ipynb)
 
  ## Day 2 Exercise
--  [Top Features & analysis :green_book:](https://github.com/Dandata0101/mbs-fraud-detection/blob/main/Classwork_day03.ipynb)
+-  [Top Features & analysis :green_book:](https://github.com/Dandata0101/mbs-fraud-detection/blob/main/Classwork_day02.ipynb)
 
 ## Day 3 Exercise
 -  [ML Models :robot:](https://github.com/Dandata0101/mbs-fraud-detection/blob/main/Classwork_day03.ipynb)
