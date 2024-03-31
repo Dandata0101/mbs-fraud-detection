@@ -9,3 +9,9 @@
 
 
 [Script Directory :file_folder:](https://github.com/Dandata0101/mbs-fraud-detection/tree/main/scripts)
+1. [Csv to Parquet conversion :floppy_disk:](https://github.com/Dandata0101/mbs-fraud-detection/blob/main/scripts/csvtopaquet.py)
+2. [Clean Data :spong:](https://github.com/Dandata0101/mbs-fraud-detection/blob/main/scripts/dataclean.py)
+3. [email analysis fx :e_mail:](https://github.com/Dandata0101/mbs-fraud-detection/blob/main/scripts/emailfx.py)
+4. [AI Email summary :robot::e_mail:](https://github.com/Dandata0101/mbs-fraud-detection/blob/main/scripts/emailsummary.py)
+5. [ML Model  :robot::chart_with_upwards_trend:](https://github.com/Dandata0101/mbs-fraud-detection/blob/main/scripts/models.py) 
+
