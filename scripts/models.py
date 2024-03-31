@@ -17,44 +17,28 @@ from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score
 
 def logistic_regression_model(df, target_column, drop_columns=None, add_constant=True, return_type='model'):
-    """
-    Fits a logistic regression model to the given DataFrame. Depending on the return_type parameter,
-    it prints McFadden's R^2, prints the full model summary, or returns the model object itself.
-
-    Parameters:
-    - df: DataFrame containing the data.
-    - target_column: Name of the column in `df` that contains the target variable.
-    - drop_columns: (Optional) List of column names in `df` to be dropped. Can include ID columns or any others not needed for the model.
-    - add_constant: (Optional) Whether to add a constant (intercept) to the model. Default is True.
-    - return_type: (Optional) Specifies the type of output: 'R2' for McFadden's R^2 and prints it, 'summary' to print the model summary, and 'model' to return the model object itself without printing. Default is 'model'.
-
-    Returns:
-    - McFadden's R^2 if return_type is 'R2', nothing if 'summary' (since it prints the summary), or the logistic regression model object if 'model'.
-    """
-    # Preparing the features and target variable by dropping specified columns
-    X = df.drop(columns=[target_column] + (drop_columns if drop_columns is not None else []))
-    Y = df[target_column]
-
-    # Optionally adding a constant to the model (intercept)
+    # Drop specified columns if any
+    if drop_columns is not None:
+        df = df.drop(columns=drop_columns)
+    
+    # Separate the features (X) from the target variable (y)
+    X = df.drop(columns=[target_column])
+    y = df[target_column]
+    
+    # Optionally add a constant to the feature variables
     if add_constant:
         X = sm.add_constant(X)
-
-    # Fit the model
-    model = sm.Logit(Y, X).fit(disp=0) # `disp=0` suppresses the output during the fitting process
-
-    if return_type == 'R2':
-        # Calculate and print McFadden's R^2
-        llf = model.llf  # Log-likelihood of the model
-        llnull = model.llnull  # Log-likelihood of the null model
-        R2_McFadden = 1 - (llf / llnull)
-        print(f"Logistic R^2: {R2_McFadden}")
-        return R2_McFadden
-    elif return_type == 'summary':
-        # Print the model summary
-        print(model.summary())
-    else:
-        # Return the model object itself
+    
+    # Fit the logistic regression model
+    model = sm.Logit(y, X).fit(disp=0)  # disp=0 suppresses the fitting process output
+    
+    # Return either the model or the summary based on return_type
+    if return_type == 'model':
         return model
+    elif return_type == 'Summary':
+        return model.summary()
+    else:
+        raise ValueError("Invalid return_type. Choose 'model' or 'Summary'")
 
 def train_and_evaluate_decision_tree(df, target_column, drop_columns, test_size=0.3, random_state=42, return_accuracy_only=False, top_n_features=20):
     """
@@ -172,9 +156,6 @@ def train_and_evaluate_random_forest(df, target_column, drop_columns, test_size=
     plot_tree(rf_model.estimators_[tree_index], feature_names=X.columns, class_names=[str(cls) for cls in rf_model.classes_], filled=True, impurity=True, max_depth=3, fontsize=10)
     plt.title('Decision Tree from the Random Forest')
     plt.show()
-
-
-
 
 def train_and_evaluate_knn(df, target_column, drop_columns, test_size=0.3, random_state=42, n_neighbors=5, return_accuracy_only=False):
     """
