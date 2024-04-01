@@ -18,8 +18,10 @@ All pythons code have been place into functions to make it easier show ouputs in
 2. [Clean Data :broom:](https://github.com/Dandata0101/mbs-fraud-detection/blob/main/scripts/dataclean.py)
    - cleans column names, fills blanks with zero and creates dummie variables for Categorical columns.
 3. [email analysis fx :email::chart_with_upwards_trend:](https://github.com/Dandata0101/mbs-fraud-detection/blob/main/scripts/emailfx.py)
+   - Text mining functions to find key phrases in email content and returns filters and content in a word clould.
 4. [Charts :chart_with_upwards_trend:](https://github.com/Dandata0101/mbs-fraud-detection/blob/main/scripts/distributionchart.py)
 5. [AI Email summary :robot::email:](https://github.com/Dandata0101/mbs-fraud-detection/blob/main/scripts/emailsummary.py)
+   - Uses openai API to summarize any email content into a concise paragraph.
 6. [ML Models :robot::chart_with_upwards_trend:](https://github.com/Dandata0101/mbs-fraud-detection/blob/main/scripts/models.py)
    - Logistic Regression
    - Decision Tree
@@ -29,4 +31,9 @@ All pythons code have been place into functions to make it easier show ouputs in
 7. [LightGBM Models :robot::chart_with_upwards_trend:](https://github.com/Dandata0101/mbs-fraud-detection/blob/main/scripts/lgbmmodels.py) 
 
 
+## setup and Installment requirements
+
+```bash
+# Install dependencies from a requirements file
+pip install -r requirements.txt
 
