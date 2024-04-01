@@ -45,9 +45,11 @@ pip install -r requirements.txt
 In order for the AI Email summary :robot::email: to work, follow these steps:
 1. go to https://platform.openai.com and create an account
 2. to go the API Key https://platform.openai.com/api-keys and create a key for your project.
+
+**example**
 ![Openai](https://github.com/Dandata0101/mbs-fraud-detection/blob/main/03-images/openai.png "api keys")
 
-1. create an environment file `.env` and the following in the file:
+3. create an environment file `.env` and the following in the file:
 
 ```
 openaikey=yourapihere
