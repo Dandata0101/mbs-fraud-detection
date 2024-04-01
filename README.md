@@ -16,8 +16,10 @@ All pythons have been place into functions to make it easier show ouputs in Jupy
 1. [Csv to Parquet conversion :floppy_disk:](https://github.com/Dandata0101/mbs-fraud-detection/blob/main/scripts/csvtopaquet.py)
 2. [Clean Data :broom:](https://github.com/Dandata0101/mbs-fraud-detection/blob/main/scripts/dataclean.py)
 3. [email analysis fx :email::chart_with_upwards_trend:](https://github.com/Dandata0101/mbs-fraud-detection/blob/main/scripts/emailfx.py)
-4. [AI Email summary :robot::email:](https://github.com/Dandata0101/mbs-fraud-detection/blob/main/scripts/emailsummary.py)
-5. [ML Models :robot::chart_with_upwards_trend:](https://github.com/Dandata0101/mbs-fraud-detection/blob/main/scripts/models.py) 
+4. [Charts :chart_with_upwards_trend:](https://github.com/Dandata0101/mbs-fraud-detection/blob/main/scripts/distributionchart.py)
+5. [AI Email summary :robot::email:](https://github.com/Dandata0101/mbs-fraud-detection/blob/main/scripts/emailsummary.py)
+6. [ML Models :robot::chart_with_upwards_trend:](https://github.com/Dandata0101/mbs-fraud-detection/blob/main/scripts/models.py)
+7. [LightGBM Models :robot::chart_with_upwards_trend:](https://github.com/Dandata0101/mbs-fraud-detection/blob/main/scripts/lgbmmodels.py) 
 
 
 
