@@ -7,8 +7,6 @@
 2. [Top Features & analysis :green_book:](https://github.com/Dandata0101/mbs-fraud-detection/blob/main/Classwork_day02.ipynb)
 3.  [ML Models analyses :robot:](https://github.com/Dandata0101/mbs-fraud-detection/blob/main/Classwork_day03.ipynb)
 
-&nbsp;
-
 ## Key Functions :robot:
 All pythons code have been place into functions to make it easier show ouputs in Jupyter notebooks:
 
@@ -39,7 +37,6 @@ All pythons code have been place into functions to make it easier show ouputs in
      - Random Forest
      - KNN
      - Gaussian 
-
 
 ## setup and Installment requirements
 
