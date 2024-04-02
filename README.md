@@ -31,7 +31,14 @@ All pythons code have been place into functions to make it easier show ouputs in
    - Gaussian
 7. [LightGBM Models :robot::chart_with_upwards_trend:](https://github.com/Dandata0101/mbs-fraud-detection/blob/main/scripts/lgbmmodels.py)
    - used a `binary_logloss`  function to return the top features used to predict the `Y` variables and provides the option to return top `n` features in a shap chart. 
-8. [SMOTE Models Evaluation :robot::chart_with_upwards_trend:](https://github.com/Dandata0101/mbs-fraud-detection/blob/main/scripts/smote.py) 
+8. [SMOTE Models Evaluation :robot::chart_with_upwards_trend:](https://github.com/Dandata0101/mbs-fraud-detection/blob/main/scripts/smote.py)
+   -  SMOTE, or Synthetic Minority Over-sampling Technique, is a statistical technique for increasing the number of cases in your dataset in a balanced way by creating synthetic examples rather than by oversampling with replacement.
+   - Models available:
+     - Logistic Regression
+     - Decision Tree
+     - Random Forest
+     - KNN
+     - Gaussian 
 
 
 ## setup and Installment requirements
