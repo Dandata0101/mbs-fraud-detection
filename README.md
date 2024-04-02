@@ -20,6 +20,7 @@ All pythons code have been place into functions to make it easier show ouputs in
 3. [email analysis fx :email::chart_with_upwards_trend:](https://github.com/Dandata0101/mbs-fraud-detection/blob/main/scripts/emailfx.py)
    - Text mining functions to find key phrases in email content and returns filters and content in a word clould.
 4. [Charts :chart_with_upwards_trend:](https://github.com/Dandata0101/mbs-fraud-detection/blob/main/scripts/distributionchart.py)
+   - Chart functions for categorical and numeric columns.
 5. [AI Email summary :robot::email:](https://github.com/Dandata0101/mbs-fraud-detection/blob/main/scripts/emailsummary.py)
    - Uses openai API to summarize any email content into a concise paragraph (see setup for more detail).
 6. [ML Models :robot::chart_with_upwards_trend:](https://github.com/Dandata0101/mbs-fraud-detection/blob/main/scripts/models.py)
@@ -30,6 +31,7 @@ All pythons code have been place into functions to make it easier show ouputs in
    - Gaussian
 7. [LightGBM Models :robot::chart_with_upwards_trend:](https://github.com/Dandata0101/mbs-fraud-detection/blob/main/scripts/lgbmmodels.py)
    - used a `binary_logloss`  function to return the top features used to predict the `Y` variables and provides the option to return top `n` features in a shap chart. 
+8. [SMOTE Models Evaluation :robot::chart_with_upwards_trend:](https://github.com/Dandata0101/mbs-fraud-detection/blob/main/scripts/smote.py) 
 
 
 ## setup and Installment requirements
