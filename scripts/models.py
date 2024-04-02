@@ -82,7 +82,7 @@ def train_and_evaluate_decision_tree(df, target_column, drop_columns, test_size=
         bars = plt.barh(range(top_n_features), feature_importances[indices], align='center', color='skyblue')
         plt.yticks(range(top_n_features), [X.columns[i] for i in indices])
         plt.xlabel('Relative Importance')
-        plt.title('Top 20 Feature Importances')
+        plt.title('Top ' +str(top_n_features) + ' Feature Importances')
 
         for bar in bars:
             plt.text(bar.get_width(), bar.get_y() + bar.get_height()/2,
@@ -140,7 +140,7 @@ def train_and_evaluate_random_forest(df, target_column, drop_columns, test_size=
     bars = plt.barh(range(top_n_features), feature_importances[indices], align='center', color='skyblue')
     plt.yticks(range(top_n_features), [X.columns[i] for i in indices])
     plt.xlabel('Relative Importance')
-    plt.title('Top 20 Feature Importances')
+    plt.title('Top ' + str(top_n_features) + ' Feature Importances')
 
     # Add the feature importances values on the bars
     for bar in bars:
