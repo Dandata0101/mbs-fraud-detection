@@ -57,5 +57,6 @@ In order for the AI Email summary :robot::email: to work, follow these steps:
 ```
 openaikey=yourapihere
 ```
+
 note: make sure to add `.env` to your `.gitignore` file. 
 
